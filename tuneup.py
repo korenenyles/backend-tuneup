@@ -12,15 +12,15 @@ def profile(func):
     # You need to understand how decorators are constructed and used.
     # Be sure to review the lesson material on decorators, they are used
     # extensively in Django and Flask.
-    def wrapper_fun(*args, **kwargs):
-        profile_object = cProfile.Profile()
-        profile_object.enable()
+    def wrapper(*args, **kwargs):
+        profile_obj = cProfile.Profile()
+        profile_obj.enable()
         result = func(*args, **kwargs)
-        profile_object.disable()
-        pstats.Stats(profile_object).strip_dirs().sort_stats(
+        profile_obj.disable()
+        pstats.Stats(profile_obj).strip_dirs().sort_stats(
             'cumulative').print_stats()
         return result
-    return wrapper_fun
+    return wrapper
 
 
 def read_movies(src):
