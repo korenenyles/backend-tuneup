@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-
 # -*- coding: utf-8 -*-
+
 """Tuneup assignment"""
 __author__ = "Koren Nyles, Chris Wilson, Sean Bailey"
 import cProfile
